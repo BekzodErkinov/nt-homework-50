@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OMDb Movies</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	
+	<nav class="site-nav navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand" href="#">
+			<img class="site-logo" src="img/movi-logo.png" alt="Movie Logo" width="140" height="130">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<form class="nav-form  form-inline" action="#" method="GET">
+				<input class="search-input  form-control mr-2 my-sm-2" type="search" placeholder="Search" required>
+				<select class="type-input  form-control mr-2 my-sm-2">
+					<option value="movie">Movie</option>
+					<option value="series">Series</option>
+					<option value="episode">Episode</option>
+				</select>
+				<input class="year-input  form-control mr-2 my-sm-2" type="number" min="1900" max="2021" placeholder="Year">
+				<button class="send-btn  btn btn-outline-primary my-sm-2" type="submit">Search</button>
+			</form>
+		</div>
+	</nav>
+
+	<main class="text-white">
+		<div class="container">
+			<ul class="list-movie  list-unstyled"></ul>
+		</div>
+	</main>
+	
+	
+	<div class="info"></div>
+
+
+	<template id="movie--template">
+		<div class="col-md-4 py-2">
+			<div class="card text-light bg-dark">
+				<div class="card-header text-dark bg-warning">
+					<h3 class="movie--title"></h3>
+					<strong class="movie--rating  d-block pr-2">
+						<img class="ml-2 mb-2" src="img/star-solid.svg" alt="Rating" width="20">
+					</strong>
+					<span class="movie--year  pr-3"></span>
+					<span class="movie--genre"></span>
+				</div><!-- /.card-header .text-dark .bg-warning -->
+				<div class="card-body">
+					<p class="movie--summary  px-2 txt-hide"></p>
+					<a href="#"><img class="mx-2" src="img/play-circle-regular.svg" alt="Play" width="25">Trelier</a>
+				</div>
+			</div><!-- /.card .text-light .bg-dark -->
+		</div><!-- /.col-md-4 .py-2-->
+	</template>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+</body>
+</html>
